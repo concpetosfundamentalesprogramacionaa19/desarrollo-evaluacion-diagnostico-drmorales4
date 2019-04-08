@@ -1,0 +1,61 @@
+Proc_CalculoAutomovil
+  (v, i[])
+  (i, i[0-N])
+  (impuesto, i[0-N])
+  (iva, i[0-N])
+  (marca, x [({A-Z},{a-z},{BS})
+  (origen, i [1-4])
+  (precio, i[0-N])
+  Escribir "Ingrese la cantidad de autos"
+  Leer i[v]
+
+  Para ( v<-1, v==i, i++)
+    Escribir "Ingresar la marca del vehiculo"
+    Leer marca
+    Escribir "Ingresar el origen del vehiculo"
+    Escribir "1. Argentina"
+    Escribir "2. Colombia"
+    Escribir "3. Chile"
+    Escribir "4. Otro"
+    Escribir "Ingrese un numero del 1 al 4"
+    Leer origen
+    Escribir "Ingresar el precio del vehiculo"
+    Leer precio
+
+    Escribir "IMPUESTOS"
+    Escribir "1. Argentina el impuesto es del 20%"
+    Escribir "2. Colombia el impuesto es del 25%"
+    Escribir "3. Chile el impuesto es del 30%"
+    Escribir "4. Cualquier otro pais, el impuesto es de 40%"
+  
+    Si (origen==1) Entoces
+      impuesto=precio
+      iva=impuesto*0.20
+      Escribir "El costo del impuesto es ",iva,
+    Fin_Si
+
+    Si (origen==2) Entoces
+      impuesto=precio
+      iva=impuesto*0.25
+      Escribir "El costo del impuesto es ",iva,
+    Fin_Si
+  
+    Si (origen==3) Entoces
+      impuesto=precio
+      iva=impuesto*0.30
+      Escribir "El costo del impuesto es ",iva,
+    Fin_Si
+  
+    Si (origen==4) Entoces
+      impuesto=precio
+      iva=impuesto*0.40
+      Escribir "El costo del impuesto es ",iva,
+    Fin_Si
+  Fin_Para
+  
+  precio==iva+precio
+  Escribir "El costo es", precio
+  iva==iva
+  Escribir "Los impuestos  generados son: "
+  Escribir "Los autos de los paises son: ",origen
+Fin_Proc
